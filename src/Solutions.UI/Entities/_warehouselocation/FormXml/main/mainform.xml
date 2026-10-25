@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{5eb7b5f7-f8b5-4f2d-947c-d8459b43f489}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form shownavigationbar="false" headerdensity="HighWithControls" showImage="false">
+      <tabs>
+        <tab verticallayout="true" id="{175e3365-7100-4354-88c9-b45fb485ad68}" IsUserDefined="1" name="generaltab"
+          labelid="{33ea401f-0844-45ab-8230-f6dae830a857}">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="true" showbar="false" IsUserDefined="0" id="{f985fdd6-7329-4660-8dfc-7e2ef90e5668}"
+                  labelid="{2ffa7c87-7d3d-4b9a-b673-66f582e4ac30}" name="generalsection">
+                  <labels>
+                    <label description="GENERAL" languagecode="1033" />
+                  </labels>
+                  <rows>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{1c91ef57-247e-44a4-a767-516f9f422955}" celllabelposition="Top" columns="111" labelwidth="115"
+        celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{0360dc05-5f14-43ae-9fdd-53d901c5a643}" showlabel="false" labelid="{29038b21-5f3c-4c43-97a8-bbd585befd73}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{72f7a643-e48a-4cbc-9788-80e76310b2e2}" showlabel="false" labelid="{73f1a761-3f4c-49e8-bf56-18b9fadd9843}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{ab91d0e9-ef23-4a1c-b339-6fe90a7a6409}" showlabel="false" labelid="{64750e24-6bcd-4557-8657-38b8893d75e7}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{d86bea83-e330-4255-b98b-d1e23704bf87}" celllabelposition="Top" columns="111" labelwidth="115"
+        celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{2d5b19d8-3284-4c35-8086-3d137c6fe6fb}" showlabel="false" labelid="{92efa1c2-e179-409d-a467-6f2e80d626ea}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{d11dd572-5769-434d-8ae0-010d4468a408}" showlabel="false" labelid="{83323949-519c-4eeb-bace-b4ff1a04aff5}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{ade61982-ae36-44bb-ad28-471a9c35a52b}" showlabel="false" labelid="{ac0727b9-1659-4e1f-b304-d4cf10cd4b03}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="1" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Generated Form" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Main form" languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>
