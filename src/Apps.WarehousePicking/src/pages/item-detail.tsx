@@ -4,6 +4,8 @@ import { useQuery, useQueryClient } from "@tanstack/react-query"
 import { ArrowLeftRegular, ArrowSyncRegular } from "@fluentui/react-icons"
 import { Button, Field, Input, Select } from "@fluentui/react-components"
 import { Lab_warehouseitemsService, Lab_warehousetransactionsService } from "@/generated"
+import BarcodeScanDialog from "@/components/barcode-scan-dialog"
+import LinkedProduct from "@/components/linked-product"
 import { useToast } from "@/hooks/use-toast"
 import {
   categoryLabel,
@@ -89,7 +91,19 @@ export default function ItemDetailPage() {
           <h1>{item.lab_name}</h1>
           <p className="page-subtitle">{item.lab_description || "Use this screen to pick or receive stock."}</p>
         </div>
-        <Button appearance="secondary" icon={<ArrowSyncRegular />} onClick={() => { void itemQuery.refetch(); void historyQuery.refetch() }}>Refresh</Button>
+        <div className="heading-actions">
+          <BarcodeScanDialog
+            itemId={itemId}
+            currentProductId={item._lab_productid_value}
+            onLinked={(imageSaved) => {
+              void queryClient.invalidateQueries({ queryKey: [...inventoryQueryKey, itemId] })
+              void queryClient.invalidateQueries({ queryKey: ["product", item._lab_productid_value] })
+              if (imageSaved) toast.success("Product linked to this item.")
+              else toast.warning("Product linked, but the image failed to save.")
+            }}
+          />
+          <Button appearance="secondary" icon={<ArrowSyncRegular />} onClick={() => { void itemQuery.refetch(); void historyQuery.refetch() }}>Refresh</Button>
+        </div>
       </div>
 
       <div className="detail-metrics">
@@ -97,6 +111,8 @@ export default function ItemDetailPage() {
         <div className="metric"><span className="metric-label">Category</span><span className="metric-value">{categoryLabel(item.lab_category, item.lab_categoryname)}</span></div>
         <div className="metric"><span className="metric-label">Location</span><span className="metric-value">{item.lab_locationidname || "Unassigned"}</span></div>
       </div>
+
+      {item._lab_productid_value && <LinkedProduct productId={item._lab_productid_value} />}
 
       <form className="transaction-form" onSubmit={submitTransaction}>
         <h2 className="transaction-form-heading">Record stock movement</h2>
